@@ -1,0 +1,3 @@
+[workspace]
+members = ["cursor-core", "cursor-fx", "cursor-sound", "cursor-app"]
+resolver = "2"

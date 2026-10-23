@@ -1,0 +1,16 @@
+[package]
+name = "cursor-app"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cursor-core = { path = "../cursor-core" }
+cursor-fx = { path = "../cursor-fx" }
+cursor-sound = { path = "../cursor-sound" }
+eframe = { version = "0.37", default-features = false, features = ["default_fonts", "glow"] }
+egui = "0.37"
+rfd = "0.15"
+tray-icon = "0.20"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.62", features = ["Win32_Foundation", "Win32_System_Threading", "Win32_Security", "Win32_UI_WindowsAndMessaging"] }

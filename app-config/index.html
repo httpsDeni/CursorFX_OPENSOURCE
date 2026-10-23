@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Cursor Open — Config</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 560px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+  h1 { font-size: 1.4rem; }
+  fieldset { margin: 1rem 0; }
+  button { margin: 0.25rem 0.5rem 0.25rem 0; }
+  code { background: #f0f0f0; padding: 0 0.3rem; }
+</style>
+</head>
+<body>
+<h1>Cursor Open — Config</h1>
+<p>Base para o app Tauri. Cada botão equivale a um comando do <code>cursor-ctl</code>.</p>
+<fieldset>
+  <legend>Cursor</legend>
+  <input id="cur" placeholder="C:\cursores\meu.cur" size="32">
+  <button onclick="run('apply')">Aplicar</button>
+  <button onclick="run('restore')">Restaurar padrão</button>
+</fieldset>
+<fieldset>
+  <legend>Efeitos</legend>
+  <button onclick="run('effects on')">Ligar</button>
+  <button onclick="run('effects off')">Desligar</button>
+</fieldset>
+<fieldset>
+  <legend>Som</legend>
+  <button onclick="run('sound on')">Ligar</button>
+  <button onclick="run('sound off')">Desligar</button>
+  <input id="vol" placeholder="0.7" size="4">
+  <button onclick="run('sound on --volume ' + document.getElementById('vol').value)">Aplicar volume</button>
+</fieldset>
+<pre id="out">Equivalente CLI aparece aqui.</pre>
+<script>
+  function run(cmd) {
+    let extra = '';
+    if (cmd === 'apply') extra = ' ' + document.getElementById('cur').value;
+    document.getElementById('out').textContent = 'cursor-ctl ' + cmd + extra;
+  }
+</script>
+</body>
+</html>

@@ -2,6 +2,8 @@
 
 Alternativa open source (licença MIT) para trocar **cursor + efeitos + sons** do mouse no Windows. Sem chave, sem trial, sem ThemeEditor, sem banco de dados: tudo em Rust + um JSON local.
 
+*Open-source Windows app (Rust + egui) to customize the mouse cursor, cursor effects (yellow highlight ball, trails, click rings) and mouse click sounds (.wav/.mp3). No key, no trial, MIT licensed.*
+
 ![Bola amarela seguindo o cursor](docs/img/bola-amarela.png)
 
 ## Telas
